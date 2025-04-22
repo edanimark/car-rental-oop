@@ -22,7 +22,6 @@ The application follows a modular structure:
 ├── models/                     # OOP models (Car, Rental, etc.)
 ├── services/                   # Business logic (RentalService)
 ├── cli/                        # CLI UI + controllers (menus, input, logic)
-├── data/                       # Placeholder for future data storage
 ├── README.md                   # This file
 ```
 
@@ -64,7 +63,7 @@ This is useful for:
 - Viewing object states
 - Testing input/output paths interactively
 
-The app starts with 1 rental company, 3 test cars, and 4.
+The app starts with 1 rental company, 3 cars, and 4 booking.
 
 ## 🧪 Example Flow
 
@@ -77,19 +76,25 @@ The app starts with 1 rental company, 3 test cars, and 4.
 ## 📋 Sample Dummy Data
 
 ```python
-car1 = PassengerCar("ABC-123", "Sedan", 50, 4)
-car2 = Truck("DEF-456", "Truck", 80, 5.0)
-rental = CarRental("City Cars")
+car1 = PassengerCar("ABC-123", "Passenger", 50, 4)
+car2 = PassengerCar("ABC-456", "Passenger", 50, 4)
+car3 = Truck("ABC-101", "Truck", 80, 5.0)
+
+rental1 = Rental(car1, "Test Elek", "2025-06-01")
+rental2 = Rental(car1, "Nagy Jakab", "2025-06-02")
+rental3 = Rental(car2, "Kis Béla", "2025-06-01")
+rental4 = Rental(car3, "Közepes János", "2025-06-02")
+
+car_rental = CarRental("City Cars")
 ```
 
 ## 📂 Modules Overview
 
-| Folder      | Purpose                                          |
-| ----------- | ------------------------------------------------ |
-| `models/`   | Domain classes (Car, Truck, Rental, CarRental)   |
-| `services/` | RentalService with business logic                |
-| `cli/`      | User interaction, menu navigation                |
-| `data/`     | Reserved for future data persistence (JSON / DB) |
+| Folder      | Purpose                                        |
+| ----------- | ---------------------------------------------- |
+| `models/`   | Domain classes (Car, Truck, Rental, CarRental) |
+| `services/` | RentalService with business logic              |
+| `cli/`      | User interaction, menu navigation              |
 
 ## 🧠 Design Considerations
 
